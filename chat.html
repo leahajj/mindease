@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase Chatbot - Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-bg">
+  <div class="container chat-container">
+    <h1 class="title">MindEase Chatbot</h1>
+    <h3 class="subtitle">Chat Screen</h3>
+
+    <div id="chatBox" class="chat-box">
+      <div class="bot-bubble">Hello!</div>
+      <div class="user-bubble">Hi!</div>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Type your message..." />
+      <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="bottom-buttons">
+      <button class="end-btn" onclick="goTo('index.html')">End Chat</button>
+      <button class="journal-btn" onclick="goTo('journal.html')">Journal Entry</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

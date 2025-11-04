@@ -1,0 +1,456 @@
+/* General layout */
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #e6f0ff;
+  }
+  
+  /* Gradient background for home page */
+  .home-bg {
+    background: linear-gradient(to bottom right, #dcefff, #bcd7ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Main  */
+  .container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    z-index: 2; /* makes sure it's above the clouds */
+  }
+  
+  /* 🧠 Title */
+  .title {
+    color: #2b3f73;
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+  
+  /* 🔘 Button styles */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .btn {
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  /* 🎨 Individual button colors */
+  .chat {
+    background-color: #38b4a5;
+  }
+  .chat:hover {
+    background-color: #2b9d91;
+  }
+  
+  .mood {
+    background-color: #4f8ff7;
+  }
+  .mood:hover {
+    background-color: #3574d8;
+  }
+  
+  .settings {
+    background-color: #7a61f5;
+  }
+  .settings:hover {
+    background-color: #6044d4;
+  }
+  
+  /* 🌈 Quote */
+  .quote {
+    margin-top: 25px;
+    font-style: italic;
+    color: #3d4d72;
+    font-size: 16px;
+  }
+  
+  /* 💬 Chat screen styles */
+  .chat-container {
+    max-width: 420px;
+  }
+  
+  .subtitle {
+    color: #2b3f73;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  /* Chat box */
+  .chat-box {
+    width: 100%;
+    height: 230px;
+    background-color: #f9fcff;
+    border: 3px solid #89b6ff;
+    border-radius: 20px;
+    margin: 0 auto 15px auto;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Chat bubbles */
+  .bot-bubble {
+    align-self: flex-start;
+    background-color: #e5efff;
+    padding: 8px 14px;
+    border-radius: 20px 20px 20px 0;
+    color: #1e3262;
+    max-width: 70%;
+  }
+  
+  .user-bubble {
+    align-self: flex-end;
+    background-color: #9ae2d8;
+    padding: 8px 14px;
+    border-radius: 20px 20px 0 20px;
+    color: #073b37;
+    max-width: 70%;
+  }
+  
+  /* Input + send button */
+  .input-area {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  
+  #userInput {
+    width: 65%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #bcd7ff;
+    font-size: 15px;
+  }
+  
+  .send-btn {
+    padding: 10px 18px;
+    background-color: #4f8ff7;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .send-btn:hover {
+    background-color: #3a75d8;
+  }
+  
+  /* Bottom buttons */
+  .bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .end-btn, .journal-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .end-btn {
+    background-color: #f47373;
+  }
+  .end-btn:hover {
+    background-color: #d9534f;
+  }
+  
+  .journal-btn {
+    background-color: #5c8ef5;
+  }
+  .journal-btn:hover {
+    background-color: #3b6fe0;
+  }
+  
+  /* 🌤 Mood Summary Page */
+  .mood-container {
+    max-width: 420px;
+  }
+  
+  .mood-chart {
+    background-color: #f9fcff;
+    border: 3px solid #89b6ff;
+    border-radius: 20px;
+    padding: 25px 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* Emoji line chart */
+  .emoji-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .emoji {
+    font-size: 28px;
+  }
+  
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: #5c8ef5;
+    border-radius: 2px;
+  }
+  .line.down {
+    transform: rotate(25deg);
+  }
+  .line.up {
+    transform: rotate(-15deg);
+  }
+  
+  .days {
+    display: flex;
+    justify-content: space-around;
+    color: #2b3f73;
+    font-weight: 500;
+  }
+  
+  /* Back button */
+  .home-btn {
+    padding: 12px 20px;
+    background-color: #2749c9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  .home-btn:hover {
+    background-color: #1d38a0;
+  }
+  
+  /* ⚙️ Settings Page */
+  .settings-container {
+    max-width: 420px;
+  }
+  
+  .setting-item {
+    background-color: #f9fcff;
+    border: 3px solid #89b6ff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    margin: 15px 0;
+    font-size: 17px;
+    color: #2b3f73;
+    font-weight: 500;
+  }
+  
+  /* Language dropdown */
+  .language-select {
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: #7a7a7a;
+    outline: none;
+  }
+  
+  /* Toggle switch (Notifications & Text-to-Speech) */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d6d6d6;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+  
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  /* When toggled ON */
+  input:checked + .slider {
+    background-color: #5c8ef5;
+  }
+  input:checked + .slider::before {
+    transform: translateX(21px);
+  }
+  
+  /* 📝 Journal Page */
+  .journal-container {
+    max-width: 420px;
+  }
+  
+  #journalText {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    border: 2px solid #bcd7ff;
+    padding: 12px;
+    font-size: 15px;
+    resize: none;
+    outline: none;
+    background-color: #f9fcff;
+  }
+  #journalText:focus {
+    border-color: #5c8ef5;
+  }
+  
+  .journal-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .save-btn {
+    flex: 1;
+    padding: 10px;
+    background-color: #4f8ff7;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .save-btn:hover {
+    background-color: #3a75d8;
+  }
+  
+  /* ☁️ Cloud background animation */
+  .cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.85;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    animation: moveClouds 60s linear infinite;
+    z-index: 1;
+  }
+  
+  /* Different cloud sizes */
+  .cloud::before,
+  .cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  .cloud.small {
+    width: 100px;
+    height: 55px;
+    top: 10%;
+    left: -100px;
+    animation-duration: 80s;
+  }
+  .cloud.small::before {
+    width: 40px;
+    height: 40px;
+    top: -10px;
+    left: 30px;
+  }
+  .cloud.small::after {
+    width: 35px;
+    height: 35px;
+    top: 5px;
+    left: -25px;
+  }
+  
+  .cloud.medium {
+    width: 150px;
+    height: 80px;
+    top: 30%;
+    left: -200px;
+    animation-duration: 100s;
+  }
+  .cloud.medium::before {
+    width: 60px;
+    height: 60px;
+    top: -15px;
+    left: 45px;
+  }
+  .cloud.medium::after {
+    width: 55px;
+    height: 55px;
+    top: 5px;
+    left: -35px;
+  }
+  
+  .cloud.large {
+    width: 230px;
+    height: 120px;
+    top: 60%;
+    left: -250px;
+    animation-duration: 130s;
+  }
+  .cloud.large::before {
+    width: 100px;
+    height: 100px;
+    top: -25px;
+    left: 60px;
+  }
+  .cloud.large::after {
+    width: 90px;
+    height: 90px;
+    top: 10px;
+    left: -45px;
+  }
+  
+  /* Cloud animation movement */
+  @keyframes moveClouds {
+    from {
+      transform: translateX(-300px);
+    }
+    to {
+      transform: translateX(120vw);
+    }
+  }
+  
