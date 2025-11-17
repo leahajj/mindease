@@ -54,7 +54,7 @@ Request JSON body:
 
 -------
 
-### ⭐ DELETE `/delete_mood`
+### DELETE `/delete_mood`
 Deletes a specific mood entry.
 
 Request JSON body:
@@ -73,7 +73,7 @@ All responses are returned in JSON.
 
 -------
 
-### ⭐ Response for `/log_mood`
+###  Response for `/log_mood`
 ```json
 {
   "status": "success",
@@ -89,7 +89,7 @@ All responses are returned in JSON.
 
 -------
 
-### ⭐ Response for `/get_mood`
+### Response for `/get_mood`
 ```json
 {
   "status": "success",
@@ -102,7 +102,7 @@ All responses are returned in JSON.
 
 -------
 
-### ⭐ Response for `/update_mood`
+### Response for `/update_mood`
 ```json
 {
   "status": "success",
@@ -117,7 +117,7 @@ All responses are returned in JSON.
 
 -------
 
-### ⭐ Response for `/delete_mood`
+###  Response for `/delete_mood`
 ```json
 {
   "status": "success"
