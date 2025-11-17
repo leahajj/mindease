@@ -6,9 +6,9 @@ This microservice allows the MindEase application to log a user’s mood, retrie
 
 ## 1. How to REQUEST Data From This Microservice
 
-Your program can send POST, GET, PATCH, or DELETE requests to:
+My program can send POST, GET, PATCH, or DELETE requests to:
 
-http://    
+http://localhost400    
 
 Below is the required JSON or URL parameters for each endpoint.
 
