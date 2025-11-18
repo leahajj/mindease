@@ -43,14 +43,7 @@ Request (URL Parameters):
 Updates a specific mood entry.
 
 Request JSON body:
-```json
-{
-  "user_id": "abc123",
-  "entry_id": "UUID",
-  "mood": "stressed",
-  "journal_text": "Feeling overwhelmed."
-}
-```
+{ "user_id": "abc123", "entry_id": "UUID", "mood": "stressed", "journal_text": "Feeling overwhelmed." }
 
 -------
 
@@ -58,12 +51,8 @@ Request JSON body:
 Deletes a specific mood entry.
 
 Request JSON body:
-```json
-{
-  "user_id": "abc123",
-  "entry_id": "UUID"
-}
-```
+{ "user_id": "abc123", "entry_id": "UUID" }
+
 
 -------
 
@@ -168,25 +157,9 @@ print(response.json())
 
 -------
 
-## UML Sequence Diagram (Text Version)
+## UML Sequence Diagram 
 
-```
-TestProgram -> MoodLoggerService: POST /log_mood {data}
-MoodLoggerService -> FileSystem: save_data()
-MoodLoggerService --> TestProgram: JSON response
-
-TestProgram -> MoodLoggerService: GET /get_mood?user_id=...
-MoodLoggerService -> FileSystem: load_data()
-MoodLoggerService --> TestProgram: JSON response
-
-TestProgram -> MoodLoggerService: PATCH /update_mood {data}
-MoodLoggerService -> FileSystem: update_data()
-MoodLoggerService --> TestProgram: JSON response
-
-TestProgram -> MoodLoggerService: DELETE /delete_mood {data}
-MoodLoggerService -> FileSystem: delete_data()
-MoodLoggerService --> TestProgram: JSON response
-```
+![UML Diagram](uml_moodlogger.png) 
 
 -------
 
