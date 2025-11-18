@@ -8,7 +8,7 @@ This microservice allows the MindEase application to log a user’s mood, retrie
 
 My program can send POST, GET, PATCH, or DELETE requests to:
 
-http://localhost400    
+(http://127.0.0.1:8000)
 
 Below is the required JSON or URL parameters for each endpoint.
 
