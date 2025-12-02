@@ -6,11 +6,34 @@
   <title>MindEase Chatbot - Mood Summary</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="home-bg">
   <div class="container mood-container">
+
     <h1 class="title">Mood Summary</h1>
     <h3 class="subtitle">This Week</h3>
 
+    <!--  Mood Input + Journal Entry  -->
+    <div style="text-align:left; margin-bottom:20px;">
+      <label for="moodInput"><strong>Your Mood Today:</strong></label>
+      <input id="moodInput" type="text" placeholder="tired, happy, sad..." 
+             style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:2px solid #bcd7ff;">
+
+      <label for="journalInput" style="margin-top:12px;display:block;"><strong>Journal Entry:</strong></label>
+      <textarea id="journalInput" placeholder="Write a reflection..." 
+                style="width:100%;height:100px;padding:10px;border-radius:8px;border:2px solid #bcd7ff;"></textarea>
+
+      <button class="save-btn" style="margin-top:10px;width:100%;" onclick="logMood()">
+        Save Mood
+      </button>
+
+      <!-- Mood Saved Confirmation -->
+      <p id="logResult" style="margin-top:10px;color:#2b3f73;font-weight:bold;"></p>
+    </div>
+
+
+
+    <!--  EXISTING EMOJI TIMELINE  -->
     <div class="mood-chart">
       <div class="emoji-line">
         <span class="emoji">😊</span>
@@ -29,8 +52,32 @@
       </div>
     </div>
 
+
+
+    <!--  DAILY + WEEKLY SUMMARY  -->
+    <h2 style="margin-top:20px;">Today's Summary</h2>
+    <p id="dailySummary" class="summary-box" style="white-space:pre-line;">
+      Loading...
+    </p>
+
+    <h2>This Week's Summary</h2>
+    <p id="weeklySummary" class="summary-box" style="white-space:pre-line;">
+      Loading...
+    </p>
+
+
+
     <button class="home-btn" onclick="goTo('index.html')">Back to Home</button>
+
   </div>
+
+  <!--  Load summary automatically on page open  -->
+  <script>
+    window.onload = function() {
+      loadDailySummary();
+      loadWeeklySummary();
+    };
+  </script>
 
   <script src="script.js"></script>
 </body>
